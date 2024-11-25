@@ -119,7 +119,7 @@ export const sendFilesWithPathToShopify = async (
   }
 
   await execShellCommand(
-    `shopify theme ${[
+    `npx shopify theme ${[
       'push',
       pushOnlyCommand,
       '--theme',
