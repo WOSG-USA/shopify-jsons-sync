@@ -49,7 +49,7 @@ async function run() {
         }
         await (0, utils_1.cleanRemoteFiles)();
         await (0, io_1.mkdirP)(TEMP_FOLDER);
-        await (0, exec_1.exec)(`shopify theme pull --only config/*_data.json --only templates/**/*.json --only templates/*.json --only locales/*.json --live --path ${TEMP_FOLDER} --store ${store} --verbose`, [], utils_1.EXEC_OPTIONS);
+        await (0, exec_1.exec)(`shopify theme pull --only config/*_data.json --only templates/**/*.json --only templates/*.json --only locales/*.json --live --path ${TEMP_FOLDER} --store ${store} --verbose --force`, [], utils_1.EXEC_OPTIONS);
         const localeFilesToPush = await (0, utils_1.syncLocaleAndSettingsJSON)();
         const newTemplatesToPush = await (0, utils_1.getNewTemplatesToRemote)();
         await (0, utils_1.sendFilesWithPathToShopify)([...localeFilesToPush, ...newTemplatesToPush], {
