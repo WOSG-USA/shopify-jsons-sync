@@ -27,7 +27,7 @@ async function run(): Promise<void> {
     await cleanRemoteFiles()
     await mkdirP(TEMP_FOLDER)
     await exec(
-      `shopify theme pull --only config/*_data.json --only templates/**/*.json --only templates/*.json --only locales/*.json --live --path ${TEMP_FOLDER} --store ${store} --verbose`,
+      `shopify theme pull --only config/*_data.json --only templates/**/*.json --only templates/*.json --only locales/*.json --live --path ${TEMP_FOLDER} --store ${store} --verbose --force`,
       [],
       EXEC_OPTIONS
     )
